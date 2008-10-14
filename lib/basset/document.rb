@@ -43,8 +43,7 @@ module Basset
 
     # Remove punctuation, numbers and symbols
     def clean_text
-      text.tr("'@_", '').gsub(/\W/, ' ').gsub(/[0-9]/, '')
-#      text.tr( ',?.!;:"#$%^&*()_=+[]{}\|<>/`~', " " ) .tr( "@'\-", "")
+      text.tr("'@_", '').gsub(/\W/, ' ').gsub(/[0-9]/, '').downcase
     end
 
   end

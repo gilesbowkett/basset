@@ -56,8 +56,6 @@ module Basset
       selected_features.sort_by(&:value).reverse.collect(&:name)
     end
     
-  private
-    
     def docs_with_feature_and_class(feature_name, classification)
       @features[feature_name].docs_with_class(classification)
     end

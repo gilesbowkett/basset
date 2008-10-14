@@ -44,8 +44,10 @@ class Float
 end
 
 class Symbol
-  def to_proc
-    proc { |obj, *args| obj.send(self, *args) }
+  unless public_method_defined? :to_proc
+    def to_proc
+      Proc.new { |*args| args.shift.__send__(self, *args) }
+    end
   end
 end
 
