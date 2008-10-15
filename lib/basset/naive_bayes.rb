@@ -11,7 +11,7 @@ module Basset
     def initialize
       @number_of_documents = 0
       @number_of_documents_in_class = Hash.new(0)
-      @features = []
+      @features = {}
       reset_cached_probabilities
     end
   
